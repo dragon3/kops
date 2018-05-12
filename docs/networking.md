@@ -109,6 +109,17 @@ spec:
       mtu: 8912
 ```
 
+### Enable Weave network encryption
+
+Weave supports [network encryption](https://www.weave.works/docs/net/latest/concepts/encryption/) and it can be enabled by editing the cluster and setting `enableEncryption` option in the weave configuration.
+
+```
+spec:
+  networking:
+    weave:
+      enableEncryption: true
+```
+
 
 ### Calico Example for CNI and Network Policy
 

@@ -60,6 +60,8 @@ type KopeioNetworkingSpec struct {
 type WeaveNetworkingSpec struct {
 	MTU       *int32 `json:"mtu,omitempty"`
 	ConnLimit *int32 `json:"connLimit,omitempty"`
+	// EnableEncryption enables Weave's network encryption
+	EnableEncryption bool `json:"enableEncryption,omitempty"`
 }
 
 // FlannelNetworkingSpec declares that we want Flannel networking

@@ -130,6 +130,13 @@ spec:
             - name: CONN_LIMIT
               value: "{{ .Networking.Weave.ConnLimit }}"
             {{- end }}
+            {{- if .Networking.Weave.EnableEncryption }}
+            - name: WEAVE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: weave
+                  key: password
+            {{- end }}
           image: 'weaveworks/weave-kube:2.3.0'
           livenessProbe:
             httpGet:
